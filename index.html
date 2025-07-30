@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annasshcollite - Web Jualan Keren</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Annasshcollite</h1>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Beranda</a></li>
+                    <li><a href="#products">Produk</a></li>
+                    <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                    <li><a href="#" id="admin-login-link">Admin Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section fade-in">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Selamat Datang di Annasshcollite</h2>
+                    <p>Temukan produk digital dan fisik terbaik dengan pengalaman belanja tak terlupakan.</p>
+                    <button class="btn btn-primary animate-scale" onclick="document.getElementById('products').scrollIntoView({ behavior: 'smooth' });">Jelajahi Produk <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="products-section slide-up">
+            <div class="container">
+                <h2>Produk Pilihan Kami</h2>
+                <div class="product-grid">
+                    <div class="product-item pop-in" data-product-id="digi101" data-product-name="Desain Grafis Premium" data-product-price="Rp 250.000">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/300x200?text=Desain+Grafis" alt="Desain Grafis Premium">
+                        </div>
+                        <h3>Desain Grafis Premium</h3>
+                        <p>Koleksi template desain grafis eksklusif untuk kebutuhan Anda.</p>
+                        <p class="price">Rp 250.000</p>
+                        <button class="btn btn-secondary order-btn animate-bounce">Beli Sekarang <i class="fas fa-shopping-cart"></i></button>
+                    </div>
+                    <div class="product-item pop-in" data-product-id="phys202" data-product-name="Aksesoris Ponsel Keren" data-product-price="Rp 120.000">
+                        <div class="product-image-wrapper">
+                            <img src="https://via.placeholder.com/300x200?text=Aksesoris+Ponsel" alt="Aksesoris Ponsel Keren">
+                        </div>
+                        <h3>Aksesoris Ponsel Keren</h3>
+                        <p>Lindungi ponsel Anda dengan gaya dan fungsionalitas.</p>
+                        <p class="price">Rp 120.000</p>
+                        <button class="btn btn-secondary order-btn animate-bounce">Beli Sekarang <i class="fas fa-shopping-cart"></i></button>
+                    </div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section fade-in">
+            <div class="container">
+                <h2>Tentang Annasshcollite</h2>
+                <p>Kami berdedikasi untuk menyediakan produk berkualitas tinggi dan pengalaman berbelanja yang tak tertandingi.</p>
+                <p>Didirikan dengan visi untuk membawa produk inovatif langsung ke tangan Anda, Annasshcollite berkomitmen pada kepuasan pelanggan.</p>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section slide-up">
+            <div class="container">
+                <h2>Hubungi Kami</h2>
+                <p>Jangan ragu untuk bertanya atau memberikan masukan!</p>
+                <div class="contact-info-grid">
+                    <div class="contact-card fade-in-up">
+                        <i class="fas fa-phone-alt icon-large"></i>
+                        <h3>Telepon/WhatsApp</h3>
+                        <p><a href="https://wa.me/6285768351775" target="_blank">+6285768351775</a></p>
+                        <p><a href="https://wa.me/6283173814158" target="_blank">+6283173814158</a></p>
+                    </div>
+                    <div class="contact-card fade-in-up">
+                        <i class="fas fa-envelope icon-large"></i>
+                        <h3>Email</h3>
+                        <p><a href="mailto:cossa4you@gmail.com">cossa4you@gmail.com</a></p>
+                    </div>
+                </div>
+                <form id="contact-form" class="fade-in-up">
+                    <input type="text" placeholder="Nama Anda" required>
+                    <input type="email" placeholder="Email Anda" required>
+                    <textarea placeholder="Pesan Anda" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary animate-scale">Kirim Pesan <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Annasshcollite. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="order-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="modal-title">Konfirmasi Pesanan</h2>
+            <div id="modal-step-1">
+                <p>Anda akan membeli: <strong id="modal-product-name"></strong></p>
+                <p>Harga: <strong id="modal-product-price"></strong></p>
+                <button class="btn btn-primary animate-scale" id="confirm-order-btn">Konfirmasi Pesanan</button>
+                <button class="btn btn-secondary animate-scale" id="cancel-order-btn">Batal Pesanan</button>
+            </div>
+
+            <div id="modal-step-2" style="display: none;">
+                <h3>Pilih Metode Pembayaran</h3>
+                <div class="loading-spinner"></div>
+                <div class="payment-options">
+                    <button class="btn payment-btn animate-scale" data-payment="dana"><img src="https://via.placeholder.com/30x30/67B7F7/ffffff?text=D" alt="DANA"> DANA</button>
+                    <button class="btn payment-btn animate-scale" data-payment="ovo"><img src="https://via.placeholder.com/30x30/4A249D/ffffff?text=O" alt="OVO"> OVO</button>
+                    <button class="btn payment-btn animate-scale" data-payment="gopay"><img src="https://via.placeholder.com/30x30/00A859/ffffff?text=G" alt="Gopay"> GoPay</button>
+                    <button class="btn payment-btn animate-scale" data-payment="qris"><img src="https://via.placeholder.com/30x30/E74C3C/ffffff?text=Q" alt="QRIS"> QRIS</button>
+                </div>
+                <button class="btn btn-secondary back-btn" id="back-to-step-1" style="margin-top: 20px;">Kembali</button>
+            </div>
+
+            <div id="modal-step-3" style="display: none;">
+                <h3>Proses Pembayaran</h3>
+                <div class="loading-spinner active"></div>
+                <p id="payment-instruction">Silakan lakukan pembayaran...</p>
+                <img id="qr-code-display" src="" alt="QR Code Pembayaran" style="max-width: 200px; margin: 20px auto; display: none;">
+                <button class="btn btn-success animate-scale" id="download-qr-btn" style="display: none;">Download QR <i class="fas fa-download"></i></button>
+                <p id="payment-status-message" class="status-message"></p>
+                <button class="btn btn-info animate-scale" id="check-payment-btn" style="margin-top: 10px;">Cek Status Pembayaran <i class="fas fa-sync-alt"></i></button>
+                <button class="btn btn-danger animate-scale" id="failed-payment-btn" style="margin-top: 10px;">Simulasi Gagal Bayar</button>
+                <button class="btn btn-secondary back-btn" id="back-to-step-2" style="margin-top: 20px;">Pilih Metode Lain</button>
+            </div>
+
+            <div id="modal-step-4" style="display: none;">
+                <h3 id="final-status-title"></h3>
+                <p id="final-status-message"></p>
+                <div id="transfer-details-area" style="text-align: left; background: #f0f0f0; padding: 15px; border-radius: 8px; margin-top: 20px; display: none;">
+                    <h4>Detail Transfer:</h4>
+                    <pre id="transfer-details-output"></pre>
+                    <button class="btn btn-primary animate-scale" id="print-receipt-btn" style="margin-top: 15px;">Cetak Struk <i class="fas fa-print"></i></button>
+                </div>
+                <button class="btn btn-primary animate-scale" id="close-modal-btn" style="margin-top: 20px;">Selesai</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="ai-bot-fab" id="ai-bot-fab">
+        <img src="https://www.gstatic.com/images/branding/product/2x/gemini_2023_icon_512dp.png" alt="AI Bot" class="ai-bot-icon">
+    </div>
+
+    <div id="admin-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Admin Login</h2>
+            <form id="admin-login-form">
+                <input type="text" placeholder="Username Annas" required>
+                <input type="password" placeholder="Password (pw 1)" required>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <p style="margin-top: 15px; font-size: 0.9em; color: #888;">Ini hanya simulasi login. Fungsionalitas backend diperlukan.</p>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
+
